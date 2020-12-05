@@ -55,7 +55,7 @@ class Passport:
         return re.match(r'^(#[a-f0-9]{6})$', self.hcl) is not None
 
     def check_ecl(self):
-        return re.match(r'^(amb|blu|brn|gr|grn|hzl|oth)$', self.ecl)
+        return re.match(r'^(amb|blu|brn|gry|grn|hzl|oth)$', self.ecl)
 
     def check_pid(self):
         return re.match(r'^(\d{,9})$', self.pid) is not None
