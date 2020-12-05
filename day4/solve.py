@@ -2,7 +2,6 @@
 import re
 
 
-
 class Passport:
     REQUIRED_FIELDS = {'byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'}
     ALL_FIELDS = list(REQUIRED_FIELDS) + ['cid']
@@ -59,7 +58,7 @@ class Passport:
         return re.match(r'^(amb|blu|brn|gr|grn|hzl|oth)$', self.ecl)
 
     def check_pid(self):
-        return re.match(r'^(\d{9})$', self.pid) is not None
+        return re.match(r'^(\d{,9})$', self.pid) is not None
 
     def valid_field_format(self):
         required_fields_check_functions = [self.check_byr,
